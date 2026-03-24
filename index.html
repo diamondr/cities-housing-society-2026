@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cities, Housing, & Society Conference 2026</title>
+    <style>
+        :root {
+            --crimson: #A51C30;
+            --dark: #1E1E1E;
+            --warm-gray: #F7F5F2;
+            --medium-gray: #6B6B6B;
+            --border: #E0DCD8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: var(--dark);
+            line-height: 1.7;
+            background: #fff;
+        }
+
+        header {
+            background: var(--crimson);
+            color: #fff;
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.75rem;
+        }
+
+        header .details {
+            font-size: 1.15rem;
+            opacity: 0.92;
+            font-style: italic;
+        }
+
+        nav {
+            background: var(--dark);
+            padding: 0.75rem 1.5rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.85;
+            transition: opacity 0.2s;
+        }
+
+        nav a:hover {
+            opacity: 1;
+        }
+
+        main {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: var(--crimson);
+            border-bottom: 2px solid var(--crimson);
+            padding-bottom: 0.4rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .date-box {
+            background: var(--warm-gray);
+            border-left: 4px solid var(--crimson);
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 2rem;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .date-box table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .date-box td {
+            padding: 0.35rem 0;
+            vertical-align: top;
+        }
+
+        .date-box td:first-child {
+            font-weight: 700;
+            width: 200px;
+            color: var(--dark);
+        }
+
+        .topics-list {
+            list-style: none;
+            padding: 0;
+            columns: 1;
+        }
+
+        .topics-list li {
+            padding: 0.35rem 0 0.35rem 1.25rem;
+            position: relative;
+        }
+
+        .topics-list li::before {
+            content: "\2022";
+            color: var(--crimson);
+            font-size: 1.2em;
+            position: absolute;
+            left: 0;
+            top: 0.25rem;
+        }
+
+        .organizers {
+            list-style: none;
+            padding: 0;
+        }
+
+        .organizers li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .organizers li:last-child {
+            border-bottom: none;
+        }
+
+        .organizer-name {
+            font-weight: 700;
+        }
+
+        .organizer-affiliation {
+            color: var(--medium-gray);
+            font-style: italic;
+        }
+
+        .submit-btn {
+            display: inline-block;
+            background: var(--crimson);
+            color: #fff;
+            padding: 0.85rem 2rem;
+            text-decoration: none;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            background: #8A1728;
+        }
+
+        .tbd {
+            color: var(--medium-gray);
+            font-style: italic;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: var(--warm-gray);
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.85rem;
+            color: var(--medium-gray);
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.6rem;
+            }
+
+            nav a {
+                margin: 0 0.5rem;
+                font-size: 0.75rem;
+            }
+
+            .date-box td:first-child {
+                width: 140px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cities, Housing, &amp; Society</h1>
+        <div class="details">August 27, 2026 &middot; Cambridge, MA</div>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#cfp">Call for Papers</a>
+        <a href="#dates">Dates</a>
+        <a href="#organizers">Organizers</a>
+        <a href="#submit">Submit</a>
+        <a href="#venue">Venue</a>
+    </nav>
+
+    <main>
+        <section id="about">
+            <h2>About the Conference</h2>
+            <p>
+                Housing economics research intersects with urban, public, labor, real estate, IO, political economy,
+                and macroeconomics, yet effective evidence-based policymaking requires perspectives that transcend
+                these disciplinary boundaries. This one-day conference aims to foster collaboration across subfields
+                on policy-relevant housing questions.
+            </p>
+        </section>
+
+        <section id="cfp">
+            <h2>Call for Papers</h2>
+            <p>We invite paper submissions on topics including:</p>
+            <ul class="topics-list">
+                <li>Housing affordability and rent/price dynamics</li>
+                <li>Zoning and land use regulation</li>
+                <li>Neighborhood change and gentrification</li>
+                <li>Housing stability, evictions, and homelessness</li>
+                <li>Housing assistance programs (vouchers, public housing, inclusionary zoning)</li>
+                <li>Residential segregation and integration policy</li>
+                <li>Climate risks and housing</li>
+                <li>Housing quality and health outcomes</li>
+                <li>Housing, wealth accumulation, and intergenerational inequality</li>
+                <li>Property taxation and local public finance</li>
+                <li>Mortgage markets, credit access, and foreclosure prevention</li>
+                <li>Remote work and spatial reallocation</li>
+                <li>Housing markets, the macroeconomy, and housing stabilization policy</li>
+            </ul>
+            <p>
+                Travel support is available for presenters. Details on reimbursement will be provided upon acceptance.
+            </p>
+        </section>
+
+        <section id="dates">
+            <h2>Important Dates</h2>
+            <div class="date-box">
+                <table>
+                    <tr>
+                        <td>Submission deadline</td>
+                        <td>May 1, 2026</td>
+                    </tr>
+                    <tr>
+                        <td>Notification</td>
+                        <td><span class="tbd">TBA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Conference</td>
+                        <td>August 27, 2026</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section id="organizers">
+            <h2>Organizers</h2>
+            <ul class="organizers">
+                <li>
+                    <span class="organizer-name">Rebecca Diamond</span>
+                    <span class="organizer-affiliation">&mdash; Harvard University</span>
+                </li>
+                <li>
+                    <span class="organizer-name">Adam Guren</span>
+                    <span class="organizer-affiliation">&mdash; Boston University</span>
+                </li>
+                <li>
+                    <span class="organizer-name">Winnie van Dijk</span>
+                    <span class="organizer-affiliation">&mdash; Yale University</span>
+                </li>
+            </ul>
+        </section>
+
+        <section id="submit">
+            <h2>Submit a Paper</h2>
+            <p>
+                Please submit your paper or extended abstract by <strong>May 1, 2026</strong>.
+            </p>
+            <p class="tbd">Submission link coming soon.</p>
+            <!-- Once you have a submission link, replace the line above with:
+            <a href="YOUR_LINK_HERE" class="submit-btn" target="_blank">Submit Your Paper</a>
+            -->
+        </section>
+
+        <section id="venue">
+            <h2>Venue &amp; Travel</h2>
+            <p>
+                The conference will be held in Cambridge, MA. Detailed venue and travel information
+                will be posted closer to the event.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        Cities, Housing, &amp; Society Conference 2026
+    </footer>
+</body>
+</html>
