@@ -36,7 +36,7 @@
         header h1 {
             font-size: 2.2rem;
             font-weight: 700;
-            letter-spacing: -0.5px;
+            letter-spacing: 0;
             margin-bottom: 0.75rem;
         }
 
@@ -62,7 +62,7 @@
             font-family: 'Helvetica Neue', Arial, sans-serif;
             font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0;
             opacity: 0.85;
             transition: opacity 0.2s;
         }
@@ -72,7 +72,7 @@
         }
 
         main {
-            max-width: 760px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 2.5rem 1.5rem 4rem;
         }
@@ -86,55 +86,131 @@
             color: var(--crimson);
             border-bottom: 2px solid var(--crimson);
             padding-bottom: 0.4rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
         }
 
         p {
             margin-bottom: 1rem;
         }
 
-        .date-box {
+        .program-intro {
             background: var(--warm-gray);
             border-left: 4px solid var(--crimson);
             padding: 1.25rem 1.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             font-family: 'Helvetica Neue', Arial, sans-serif;
         }
 
-        .date-box table {
-            width: 100%;
-            border-collapse: collapse;
+        .program-intro p {
+            margin-bottom: 0.4rem;
         }
 
-        .date-box td {
-            padding: 0.35rem 0;
-            vertical-align: top;
+        .program-intro p:last-child {
+            margin-bottom: 0;
         }
 
-        .date-box td:first-child {
-            font-weight: 700;
-            width: 200px;
-            color: var(--dark);
+        .program-note {
+            color: var(--medium-gray);
+            font-style: italic;
         }
 
-        .topics-list {
+        .program-list {
             list-style: none;
             padding: 0;
-            columns: 1;
+            margin: 0;
+            border-top: 1px solid var(--border);
         }
 
-        .topics-list li {
-            padding: 0.35rem 0 0.35rem 1.25rem;
+        .program-item {
+            display: grid;
+            grid-template-columns: 8.5rem minmax(0, 1fr);
+            column-gap: 1.25rem;
+            padding: 1.15rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .program-time {
+            color: var(--crimson);
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .program-title {
+            font-size: 1.08rem;
+            line-height: 1.45;
+        }
+
+        .program-authors {
+            color: #3B3B3B;
+            font-style: italic;
+            line-height: 1.45;
+            margin-top: 0.35rem;
+        }
+
+        .program-authors .presenter,
+        .job-presenter {
+            color: var(--dark);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .program-authors .presenter:hover,
+        .job-presenter:hover {
+            text-decoration: underline;
+        }
+
+        .session-note {
+            color: var(--medium-gray);
+            display: block;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.9rem;
+            margin-top: 0.15rem;
+        }
+
+        .program-item.meal .program-title,
+        .program-item.break .program-title {
+            color: var(--medium-gray);
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1rem;
+        }
+
+        .job-talks {
+            list-style: none;
+            margin: 0.75rem 0 0;
+            padding: 0;
+        }
+
+        .job-talks li {
+            border-top: 1px solid var(--border);
+            padding: 0.7rem 0 0.7rem 1.1rem;
             position: relative;
         }
 
-        .topics-list li::before {
-            content: "\2022";
-            color: var(--crimson);
-            font-size: 1.2em;
-            position: absolute;
+        .job-talks li:last-child {
+            padding-bottom: 0;
+        }
+
+        .job-talks li::before {
+            background: var(--crimson);
+            border-radius: 50%;
+            content: "";
+            height: 0.4rem;
             left: 0;
-            top: 0.25rem;
+            position: absolute;
+            top: 1.25rem;
+            width: 0.4rem;
+        }
+
+        .job-title {
+            display: block;
+            line-height: 1.45;
+        }
+
+        .job-presenter {
+            display: block;
+            font-style: italic;
+            margin-top: 0.15rem;
         }
 
         .organizers {
@@ -166,30 +242,6 @@
             font-style: italic;
         }
 
-        .submit-btn {
-            display: inline-block;
-            background: var(--crimson);
-            color: #fff;
-            padding: 0.85rem 2rem;
-            text-decoration: none;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            font-size: 1rem;
-            letter-spacing: 0.5px;
-            border: none;
-            cursor: pointer;
-            transition: background 0.2s;
-            margin-top: 0.5rem;
-        }
-
-        .submit-btn:hover {
-            background: #8A1728;
-        }
-
-        .tbd {
-            color: var(--medium-gray);
-            font-style: italic;
-        }
-
         footer {
             text-align: center;
             padding: 2rem 1.5rem;
@@ -205,12 +257,18 @@
             }
 
             nav a {
-                margin: 0 0.5rem;
+                display: inline-block;
+                margin: 0.25rem 0.5rem;
                 font-size: 0.75rem;
             }
 
-            .date-box td:first-child {
-                width: 140px;
+            .program-item {
+                grid-template-columns: 1fr;
+                row-gap: 0.35rem;
+            }
+
+            .program-time {
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -223,10 +281,8 @@
 
     <nav>
         <a href="#about">About</a>
-        <a href="#cfp">Call for Papers</a>
-        <a href="#dates">Dates</a>
+        <a href="#program">Program</a>
         <a href="#organizers">Organizers</a>
-        <a href="#submit">Submit</a>
         <a href="#venue">Venue</a>
     </nav>
 
@@ -241,47 +297,136 @@
             </p>
         </section>
 
-        <section id="cfp">
-            <h2>Call for Papers</h2>
-            <p>We invite paper submissions on topics including:</p>
-            <ul class="topics-list">
-                <li>Housing affordability and rent/price dynamics</li>
-                <li>Zoning and land use regulation</li>
-                <li>Neighborhood change and gentrification</li>
-                <li>Housing stability, evictions, and homelessness</li>
-                <li>Housing assistance programs (vouchers, public housing, inclusionary zoning)</li>
-                <li>Residential segregation and integration policy</li>
-                <li>Climate risks and housing</li>
-                <li>Housing quality and health outcomes</li>
-                <li>Housing, wealth accumulation, and intergenerational inequality</li>
-                <li>Property taxation and local public finance</li>
-                <li>Mortgage markets, credit access, and foreclosure prevention</li>
-                <li>Remote work and spatial reallocation</li>
-                <li>Housing markets, the macroeconomy, and housing stabilization policy</li>
-            </ul>
-            <p>
-                Some travel support is available for presenters. Details on reimbursement are in the works.
-            </p>
-        </section>
-
-        <section id="dates">
-            <h2>Important Dates</h2>
-            <div class="date-box">
-                <table>
-                    <tr>
-                        <td>Submission deadline</td>
-                        <td>May 1, 2026</td>
-                    </tr>
-                    <tr>
-                        <td>Notification</td>
-                        <td>June 1, 2026</td>
-                    </tr>
-                    <tr>
-                        <td>Conference</td>
-                        <td>August 27, 2026</td>
-                    </tr>
-                </table>
+        <section id="program">
+            <h2>Program</h2>
+            <div class="program-intro">
+                <p><strong>Thursday, August 27, 2026</strong></p>
+                <p>Hansen-Mason Room, Littauer 301</p>
+                <p class="program-note">Presenter in bold.</p>
             </div>
+
+            <ol class="program-list">
+                <li class="program-item meal">
+                    <div class="program-time">8:00 a.m.</div>
+                    <div class="program-content">
+                        <div class="program-title">Breakfast</div>
+                    </div>
+                </li>
+
+                <li class="program-item">
+                    <div class="program-time">8:30 a.m.</div>
+                    <div class="program-content">
+                        <div class="program-title">Not So Affordable? Low-Income Housing and the Price of Public Capital</div>
+                        <div class="program-authors">Allan Lee and <a href="https://evansoltas.com/" class="presenter" target="_blank" rel="noopener noreferrer">Evan Soltas</a></div>
+                    </div>
+                </li>
+
+                <li class="program-item break">
+                    <div class="program-time">9:30 a.m.</div>
+                    <div class="program-content">
+                        <div class="program-title">Break</div>
+                    </div>
+                </li>
+
+                <li class="program-item">
+                    <div class="program-time">9:45 a.m.</div>
+                    <div class="program-content">
+                        <div class="program-title">Home Ownership and Cost of Living</div>
+                        <div class="program-authors"><a href="https://www.economics.harvard.edu/people/gabriel-chodorow-reich" class="presenter" target="_blank" rel="noopener noreferrer">Gabe Chodorow-Reich</a>, Ed Glaeser, Xavier Jaravel, and Avi Lipton</div>
+                    </div>
+                </li>
+
+                <li class="program-item break">
+                    <div class="program-time">10:45 a.m.</div>
+                    <div class="program-content">
+                        <div class="program-title">Break</div>
+                    </div>
+                </li>
+
+                <li class="program-item">
+                    <div class="program-time">11:00 a.m.</div>
+                    <div class="program-content">
+                        <div class="program-title">
+                            Job Market Talks
+                            <span class="session-note">15 min. uninterrupted + 5 min. discussion</span>
+                        </div>
+                        <ul class="job-talks">
+                            <li>
+                                <span class="job-title">Zoning and the Dynamics of Urban Redevelopment</span>
+                                <a href="https://economics.mit.edu/people/phd-students/vincent-rollet" class="job-presenter" target="_blank" rel="noopener noreferrer">Vincent Rollet</a>
+                            </li>
+                            <li>
+                                <span class="job-title">Building with Externalities: Local Governments and Wind Farms</span>
+                                <a href="https://www.zanekashner.com/" class="job-presenter" target="_blank" rel="noopener noreferrer">Zane Kashner</a>
+                            </li>
+                            <li>
+                                <span class="job-title">Targeting and Price Pass-Through in Housing Voucher Design</span>
+                                <a href="https://www.nber.org/people/fernando_ochoa" class="job-presenter" target="_blank" rel="noopener noreferrer">Fernando Ochoa</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="program-item meal">
+                    <div class="program-time">12:00 p.m.</div>
+                    <div class="program-content">
+                        <div class="program-title">Lunch</div>
+                    </div>
+                </li>
+
+                <li class="program-item">
+                    <div class="program-time">1:00 p.m.</div>
+                    <div class="program-content">
+                        <div class="program-title">How Do Neighborhoods and Firms Affect Intergenerational Mobility?</div>
+                        <div class="program-authors">David Card, Jesse Rothstein, and <a href="https://www.nber.org/people/moises_yi" class="presenter" target="_blank" rel="noopener noreferrer">Moises Yi</a></div>
+                    </div>
+                </li>
+
+                <li class="program-item break">
+                    <div class="program-time">2:00 p.m.</div>
+                    <div class="program-content">
+                        <div class="program-title">Break</div>
+                    </div>
+                </li>
+
+                <li class="program-item">
+                    <div class="program-time">2:15 p.m.</div>
+                    <div class="program-content">
+                        <div class="program-title">Immigration, Innovation, and the Geography of Growth</div>
+                        <div class="program-authors">Costas Arkolakis, <a href="https://sunkyounglee.com/" class="presenter" target="_blank" rel="noopener noreferrer">Sun Kyoung Lee</a>, and Michael Peters</div>
+                    </div>
+                </li>
+
+                <li class="program-item break">
+                    <div class="program-time">3:15 p.m.</div>
+                    <div class="program-content">
+                        <div class="program-title">Break</div>
+                    </div>
+                </li>
+
+                <li class="program-item">
+                    <div class="program-time">3:30 p.m.</div>
+                    <div class="program-content">
+                        <div class="program-title">The Making of a National Mortgage Market and Its Effects on American Cities</div>
+                        <div class="program-authors">Victoria Angelova and <a href="https://leonardodamico.github.io/" class="presenter" target="_blank" rel="noopener noreferrer">Leonardo D'Amico</a></div>
+                    </div>
+                </li>
+
+                <li class="program-item break">
+                    <div class="program-time">4:30 p.m.</div>
+                    <div class="program-content">
+                        <div class="program-title">Break</div>
+                    </div>
+                </li>
+
+                <li class="program-item">
+                    <div class="program-time">4:45 p.m.</div>
+                    <div class="program-content">
+                        <div class="program-title">New Deal Public Housing and Racial Segregation in U.S. Cities</div>
+                        <div class="program-authors">Hector Blanco and <a href="https://www.lucaperdoni.com/" class="presenter" target="_blank" rel="noopener noreferrer">Luca Perdoni</a></div>
+                    </div>
+                </li>
+            </ol>
         </section>
 
         <section id="organizers">
@@ -300,14 +445,6 @@
                     <span class="organizer-affiliation">&mdash; Yale University</span>
                 </li>
             </ul>
-        </section>
-
-        <section id="submit">
-            <h2>Submit a Paper</h2>
-            <p>
-                Please submit your paper or extended abstract by <strong>May 1, 2026</strong>.
-            </p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSewrB-U1Ul_krBevwGKfXRGwdRk7DTu6FDHJBATUwFPxLF_NA/viewform" class="submit-btn" target="_blank">Submit Your Paper</a>
         </section>
 
         <section id="venue">
